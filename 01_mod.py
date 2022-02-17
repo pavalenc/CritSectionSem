@@ -26,6 +26,7 @@ def task(common, tid, turn):
      turn.value = (tid + 1) % N
      lock.release()
 def main():
+ lock=Lock()
  lp = []
  common = Value('i', 0)
  turn = Value('i', 0)
@@ -39,5 +40,4 @@ def main():
  print (f"Valor final del contador {common.value}")
  print ("fin")
 if __name__ == "__main__":
- lock=Lock()
  main()
